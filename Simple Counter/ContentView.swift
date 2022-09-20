@@ -8,9 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var count: Int = 0
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        HStack {
+            ZStack{
+                Circle()
+                    .fill(Color.yellow)
+                Button("Increment") {
+                    self.count += 1
+                }
+            }
+            .frame(width: 100.0, height: 100.0)
+            
+            VStack(alignment:  .leading, spacing: 4) {
+                Text("Count \(count)")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.gray)
+                    
+                Text("Esther Tsui, 2022")
+            }
+            
+        }
     }
 }
 
